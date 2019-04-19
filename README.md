@@ -4,5 +4,7 @@
 
 # Utilisation 
 1.```git clone https://github.com/colasadam/todo_web.git && cd todo_web```
+
 2.```npm install```
+
 3.```npm start```
