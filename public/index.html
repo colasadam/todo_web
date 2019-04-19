@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="ListeaFaire">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Liste de choses à faire</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="/public/index.js"></script>
+    </head>
+    <body>
+        <div ng-controller="mainController" >
+            <h1>Todo List : </h1>
+            <p id="ListeName"></p>
+            <p> Nombre des choses à faire : {{ laliste.length }}</p>
+
+            <div id="todo-list">
+                <table id class="table table-bordered table-striped">                        
+                    <div ng-repeat="y in lalistenom" >
+                        <button ng-click="modifieListeName(y.listname)">{{y.listname}}</button>
+                        <button ng-click="deleteList(y.listname)" class="btn btn-danger" > Supprimer </button>
+                    </div>
+                </table>
+                <form>
+                    <input type="text" placeholder="nouvelle liste" ng-model="Liste.text">
+                    <br>
+                    <button type="submit" ng-click="createList()" class="btn btn-danger">Ajouter</button>
+                </form>
+                <table id ="listetache" style="display: none;" class="table table-bordered table-striped">
+                    <thead align="center">
+                        <tr>
+                            <th scope="col">Supprimer</th>
+                            <th scope="col">Checked</th>
+                            <th scope="col">Tâche :</th>
+                            <th scope="col">De :</th>
+                            <th scope="col">Date :</th>
+                            <th scope="col">Modifier</th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="x in laliste" ng-style="x.done && { 'background-color' : 'dimgray' }">
+                        <h5>
+                            <div >
+                                <th scope="col"><button ng-click="deleteTodo(x._id)" class="btn btn-danger" > Supprimer </button> </th>
+                                <th scope="col"><input type="checkbox" ng-click="isChecked(x._id,x.done)" ng-checked="x.done"> </th>
+                                <th scope="col" ng-style="x.done && { 'text-decoration' : 'line-through' }">
+                                    <div id="xtext-{{$index}}" style="display: block;" ng-style="x.done && { 'text-decoration' : 'line-through' }">
+                                        {{ x.text }}
+                                    </div>
+                                    <div id="xtextmodify-{{$index}}" style="display: none;">
+                                        <input type="text" class="form-control" name="text" ng-model="modifyData.text">
+                                    </div>
+                                </th>
+                                <th scope="col" ng-click="isChecked(x._id,x.done)" ng-style="x.done && { 'text-decoration' : 'line-through' }">{{x.username}}</th>
+                                <th scope="col" ng-click="isChecked(x._id,x.done)" ng-style="x.done && { 'text-decoration' : 'line-through' }" >{{ x.date }}</th>
+                                <th scope="col"><button id="modify-{{$index}}" ng-click="modifier($index, x)" class="btn btn-primary">modifier</button></th>
+                            </div>
+                        </h5>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="todo-form" style="display: none;">
+                <form>
+                    <input type="text" placeholder="écrire quelque chose" ng-model="formData.text">
+                    <br>
+                    <button type="submit" ng-click="createTodo()" class="btn btn-danger">Ajouter</button>
+                </form>
+            </div>
+
+    </body>
+</html>

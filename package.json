@@ -1,0 +1,29 @@
+{
+  "name": "adam0612",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colasadam/Web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colasadam/Web/issues"
+  },
+  "homepage": "https://github.com/colasadam/Web#readme",
+  "dependencies": {
+    "angularjs": "0.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "mongodb": "^3.2.3",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.11"
+  }
+}
