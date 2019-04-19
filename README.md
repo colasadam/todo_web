@@ -3,12 +3,15 @@
   L'application est déployée sur https://todo-adam-colas.herokuapp.com
 
 # Utilisation 
+1.
 ```
-git clone https://github.com/hwadii/awesome-todolist.git && cd awesome-todolist
+git clone https://github.com/colasadam/todo_web.git && cd todo_web
 ```
+2.
 ```
- npm install
+npm install
 ```
+3.
 ```
-  npm start
+npm start
 ```
