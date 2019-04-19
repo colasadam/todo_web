@@ -8,5 +8,4 @@
 2.```npm install```
 
 3.```npm start```
-
 4. Se rendre à l'adresse suivante: http://localhost:8080/
